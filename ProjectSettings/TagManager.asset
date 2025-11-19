@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Wall
+  - cloud
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Map
+  - Player
+  - Enemy
+  - Wall
+  - Laser
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 831878469
+    locked: 0
+  - name: Laser
+    uniqueID: 288198925
+    locked: 0
+  - name: moon
+    uniqueID: 2722835371
+    locked: 0
+  - name: cloud
+    uniqueID: 3420868757
+    locked: 0
+  - name: building
+    uniqueID: 739584941
+    locked: 0
+  - name: tree
+    uniqueID: 24664205
+    locked: 0
+  - name: Enemy
+    uniqueID: 2765993051
+    locked: 0
+  - name: Player
+    uniqueID: 2999765051
+    locked: 0
