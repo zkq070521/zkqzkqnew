@@ -21,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float damage)
+    /*public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0 && !isDead)
@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
 
-    }
+    }*/
 
     void Die()
     {
@@ -57,6 +57,11 @@ public class EnemyHealth : MonoBehaviour
             //Destroy(gameObject);
             isDead = true;
             animator.SetBool("isDie", isDead);
+
+            //禁用玩家
+            //GetComponent<PlayerController>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            //animator.SetBool("isDie", isDead);
             //gameObject.SetActive(false);
             //动画状态，0是默认图层
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);

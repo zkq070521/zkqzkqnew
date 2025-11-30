@@ -8,6 +8,10 @@ TagManager:
   - Wall
   - cloud
   - Eye
+  - Interactable
+  - runbox
+  - green
+  - dun
   layers:
   - Default
   - TransparentFX
@@ -20,8 +24,8 @@ TagManager:
   - Enemy
   - Wall
   - Laser
-  - 
-  - 
+  - Ground
+  - box
   - 
   - 
   - 
@@ -69,9 +73,24 @@ TagManager:
   - name: Enemy
     uniqueID: 2765993051
     locked: 0
+  - name: LittleEnemy
+    uniqueID: 2654049121
+    locked: 0
+  - name: "\u6811"
+    uniqueID: 244197661
+    locked: 0
   - name: Player
     uniqueID: 2999765051
     locked: 0
   - name: "\u9886\u57DF"
     uniqueID: 3714756909
+    locked: 0
+  - name: box
+    uniqueID: 3824923897
+    locked: 0
+  - name: UI
+    uniqueID: 2974696367
+    locked: 0
+  - name: monkey
+    uniqueID: 1890348903
     locked: 0

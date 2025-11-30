@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
                 laserLine.SetPosition(1, player.transform.position); // 终点：主角位置
 
 
-                playerHealth.TakeDamage(20);
+                playerHealth.TakeDamage(5);
 
                 // 更新上次射击时间
                 lastShotTime = Time.time;
