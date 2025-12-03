@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15fbbb865c2c952448c5ed9bd900c8c2
+    m_Address: bubble_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6031afcebd9b86240a6a37cb71dee27b
     m_Address: '#runbox '
     m_ReadOnly: 0
@@ -32,6 +37,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac4b2e8804f7e864cb25602cd1d068c4
+    m_Address: '#eyemove'
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b6b543128e76715409cb2869ce43e178
     m_Address: '#water'
     m_ReadOnly: 0
@@ -39,6 +49,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c0e0122a98fea8146998e086ad5536c8
     m_Address: "\u55B7\u6CC9"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fba4a40d48029cc4ebd37d9151715d18
+    m_Address: orange_0
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

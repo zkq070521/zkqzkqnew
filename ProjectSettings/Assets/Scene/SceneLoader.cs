@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
     public float fadeDuration;
     private void Awake()
     {
-       //Addressables.LoadSceneAsync(firstLoadScene.sceneReference, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+        //Addressables.LoadSceneAsync(firstLoadScene.sceneReference, UnityEngine.SceneManagement.LoadSceneMode.Additive);
         currentLoadedScene = firstLoadScene;
         currentLoadedScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive);
 
@@ -40,7 +40,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnLoadRequestEvent(GameSceneSO locationToLoad, Vector3 posToGo, bool fadeScreen)
     {
-       sceneToLoad = locationToLoad;
+        sceneToLoad = locationToLoad;
         positionToGo = posToGo;
         this.fadeScreen = fadeScreen;
 
@@ -61,20 +61,20 @@ public class SceneLoader : MonoBehaviour
 
         yield return new WaitForSeconds(fadeDuration);
 
-       
-        
-            yield return currentLoadedScene.sceneReference.UnLoadScene();
 
-        
+
+        yield return currentLoadedScene.sceneReference.UnLoadScene();
+
+
 
         LoadNewScene();
     }
 
     private void LoadNewScene()
     {
-        sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive,true);
+        sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
 
-        
+
     }
 
 

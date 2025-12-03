@@ -12,6 +12,11 @@ TagManager:
   - runbox
   - green
   - dun
+  - SceneTrigger
+  - bubble
+  - fruit
+  - Door
+  - die
   layers:
   - Default
   - TransparentFX
@@ -93,4 +98,7 @@ TagManager:
     locked: 0
   - name: monkey
     uniqueID: 1890348903
+    locked: 0
+  - name: New Layer 16
+    uniqueID: 364468429
     locked: 0

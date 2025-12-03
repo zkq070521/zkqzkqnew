@@ -328,15 +328,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FG_Cellar_11
+      name: "\u7A97\u62371"
       rect:
         serializedVersion: 2
-        x: 354
-        y: 450
-        width: 12
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 257
+        y: 400
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5580673, y: 0.52986366}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,13 +349,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FG_Cellar_12
+      name: "\u7A97\u62372"
       rect:
         serializedVersion: 2
-        x: 370
-        y: 441
-        width: 12
-        height: 29
+        x: 272
+        y: 401
+        width: 16
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,13 +622,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FG_Cellar_25
+      name: "\u7A97\u62373"
       rect:
         serializedVersion: 2
-        x: 354
-        y: 402
-        width: 12
-        height: 28
+        x: 289
+        y: 399
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,13 +643,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FG_Cellar_26
+      name: "\u7A97\u62375"
       rect:
         serializedVersion: 2
-        x: 370
-        y: 393
-        width: 12
-        height: 29
+        x: 272
+        y: 384
+        width: 18
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,13 +664,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FG_Cellar_27
+      name: "\u7A97\u62374"
       rect:
         serializedVersion: 2
-        x: 386
-        y: 402
-        width: 12
-        height: 25
+        x: 304
+        y: 405
+        width: 15
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1835,27 +1835,6 @@ TextureImporter:
       bones: []
       spriteID: cc8f8abc5820b4c42a72ecc4a2c62566
       internalID: 1689345361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: water
-      rect:
-        serializedVersion: 2
-        x: 391
-        y: 167
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f6ff1a5110b87e439bc2193413cee35
-      internalID: 1965696863
       vertices: []
       indices: 
       edges: []
@@ -3855,6 +3834,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FG_Cellar_83
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 167
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5277fa79a57237d4ea334866886ceefc
+      internalID: -1655429227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3879,7 +3879,6 @@ TextureImporter:
       FG_Cellar_107: 250778958
       FG_Cellar_108: -534408701
       FG_Cellar_109: -1361617053
-      FG_Cellar_11: 1724387326
       FG_Cellar_110: 322598946
       FG_Cellar_111: 1586542703
       FG_Cellar_112: 530092645
@@ -3890,7 +3889,6 @@ TextureImporter:
       FG_Cellar_117: -130894014
       FG_Cellar_118: 1976122194
       FG_Cellar_119: 311601572
-      FG_Cellar_12: 690121884
       FG_Cellar_120: -1037139165
       FG_Cellar_121: 1367729415
       FG_Cellar_122: 1291554415
@@ -3963,9 +3961,6 @@ TextureImporter:
       FG_Cellar_22: -440920960
       FG_Cellar_23: -661085319
       FG_Cellar_24: 1687004058
-      FG_Cellar_25: -1550663143
-      FG_Cellar_26: -181225288
-      FG_Cellar_27: -321869513
       FG_Cellar_28: 265742868
       FG_Cellar_29: -2068108701
       FG_Cellar_3: -528063466
@@ -4027,6 +4022,7 @@ TextureImporter:
       FG_Cellar_80: -2058358785
       FG_Cellar_81: 362404708
       FG_Cellar_82: 1689345361
+      FG_Cellar_83: -1655429227
       FG_Cellar_84: 1651987351
       FG_Cellar_85: 1792953604
       FG_Cellar_86: -1494216747
@@ -4044,7 +4040,11 @@ TextureImporter:
       FG_Cellar_97: -693351734
       FG_Cellar_98: 1173285168
       FG_Cellar_99: 112488923
-      water: 1965696863
+      "\u7A97\u62371": 1724387326
+      "\u7A97\u62372": 690121884
+      "\u7A97\u62373": -1550663143
+      "\u7A97\u62374": -321869513
+      "\u7A97\u62375": -181225288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

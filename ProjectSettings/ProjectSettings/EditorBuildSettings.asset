@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Ghost.unity
     guid: 397cbde02422f244da4fe963b42f626e
-  - enabled: 1
-    path: Assets/Scenes/Domain.unity
+  - enabled: 0
+    path: "Assets/Scenes/\u57CE\u5821.unity"
     guid: 6239c36458cf0d342abbc56e4c9af6fb
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 356f675a477c2e643ab487094a80a843, type: 2}
