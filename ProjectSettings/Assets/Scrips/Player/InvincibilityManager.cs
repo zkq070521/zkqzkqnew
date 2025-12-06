@@ -5,7 +5,7 @@ public class InvincibilityManager : MonoBehaviour
 {
     [Header("核心配置")]
     public string dunTag = "dun"; 
-    public float invincibilityDuration = 6f; // 无敌持续时间（10秒）
+    public float invincibilityDuration; // 无敌持续时间（10秒）
     public PlayerHealth playerHealth; 
 
     [Header("UI计时条配置")]
@@ -41,6 +41,7 @@ public class InvincibilityManager : MonoBehaviour
         // 只对Tag为"dun"的物体生效，且当前未无敌
         if (other.CompareTag(dunTag) && !isInvincible)
         {
+            
             EnableInvincibility();
         }
     }
@@ -70,7 +71,7 @@ public class InvincibilityManager : MonoBehaviour
         if (invincibilityBar != null)
         {
             
-            invincibilityBar.fillAmount = 0f; // 归零
+            invincibilityBar.fillAmount = 1f; // 归零
         }
 
         Debug.Log("无敌状态结束！");
@@ -86,7 +87,7 @@ public class InvincibilityManager : MonoBehaviour
         invincibilityBar.fillAmount = Mathf.Clamp01(fillRatio); // 限制在0~1之间
     }
 
-    // 供生命值脚本调用：判断是否无敌（核心！控制是否扣血）
+    // 供生命值脚本调用
     public bool IsInvincible()
     {
         return isInvincible;

@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (invincibilityManager != null && invincibilityManager.IsInvincible())
         {
-            Debug.Log("处于无敌状态，不受伤害！");
+            Debug.Log("处于无敌状态");
             return;
         }
 

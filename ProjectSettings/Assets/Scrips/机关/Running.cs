@@ -16,9 +16,16 @@ public class Running : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj == player)
+        
+        if (obj.gameObject == player && health != null)
         {
+            
             health.currentHealth = 0;
+
+            
+            player.transform.position = health.startPosition;
+            health.currentHealth = 1000;
+
         }
     }
 }

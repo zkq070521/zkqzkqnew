@@ -17,6 +17,7 @@ TagManager:
   - fruit
   - Door
   - die
+  - Opendoor
   layers:
   - Default
   - TransparentFX
