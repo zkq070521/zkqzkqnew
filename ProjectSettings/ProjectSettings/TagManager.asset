@@ -18,6 +18,8 @@ TagManager:
   - Door
   - die
   - Opendoor
+  - Skull
+  - yuanshen
   layers:
   - Default
   - TransparentFX

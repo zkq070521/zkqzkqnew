@@ -66,7 +66,7 @@ public class Relife : MonoBehaviour
         }
     }
 
-    // 触发复活点时：更新复活点 + 立刻同步摄像机位置
+    
     private void OnTriggerEnter2D(Collider2D obj)
     {
         if (obj.gameObject == player && health != null && mainCamera != null)
@@ -78,7 +78,7 @@ public class Relife : MonoBehaviour
 
             health.startPosition = (Vector2)player.transform.position;
             Debug.Log("复活点更新：" + health.startPosition);
-            // 触发时强制同步一次摄像机位置（平滑跟随会自动衔接）
+            
             UpdateCameraPosition();
         }
     }
@@ -107,11 +107,5 @@ public class Relife : MonoBehaviour
     }
 
    
-   /* public void SyncCameraOnRespawn()
-    {
-        if (player != null && mainCamera != null)
-        {
-            UpdateCameraPosition();
-        }
-    }*/
+  
 }

@@ -1,96 +1,106 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-using System.Collections; // 检查是否点击在UI上
+using UnityEngine.InputSystem;
 
 
-public class GalleryInput : MonoBehaviour
+public class PhotoInput : MonoBehaviour
 {
     public int muralID = 0;
-    private GalleryManager galleryManager;
+    private PhotoManger photoManager;
     private Camera mainCamera;
 
-    
+
     private InputAction clickAction;
 
     void Start()
     {
         mainCamera = Camera.main;
-        galleryManager = FindObjectOfType<GalleryManager>();
+        photoManager = FindObjectOfType<PhotoManger>();
 
         PlayerInput playerInput = FindObjectOfType<PlayerInput>();
 
         if (playerInput != null && playerInput.actions != null)
         {
-            
-            clickAction = playerInput.actions.FindAction("UI/Click"); // 格式：ActionMap/Action
-
            
+            clickAction = playerInput.actions.FindAction("PhotoMouse/click");
             if (clickAction != null)
             {
-                
-                clickAction.performed += OnClickActionPerformed;
-                
-                clickAction.Enable();
                
+                clickAction.performed -= OnClickActionPerformed;
+                clickAction.performed += OnClickActionPerformed;
+                clickAction.Enable();
+                
             }
-            else
-            {
-                Debug.LogError($"未找到 ‘UI/Click‘");
-            }
+            
         }
         else
         {
-            Debug.LogError($"没有PlayerInput组件。");
+            Debug.LogError($"没有PlayerInput组件或InputActions为空。");
         }
     }
 
-    
+
     private void OnClickActionPerformed(InputAction.CallbackContext context)
     {
-        // 启动协程延迟处理
+
+       
         StartCoroutine(DelayedClickCheck());
+        // 启动协程延迟处理,暂停
+
+       // StartCoroutine(DelayedClickCheck());
     }
 
     private IEnumerator DelayedClickCheck()
     {
-        // 等待一帧，让UI事件系统先更新
         yield return null;
 
        
 
         Vector2 screenPos = Mouse.current.position.ReadValue();
         Ray ray = mainCamera.ScreenPointToRay(screenPos);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        // 新增：扩大射线检测距离（默认100，改成1000，避免距离不够）
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 1000f);
+
+        if (hit.collider == null)
+        {
+            Debug.Log("射线未命中任何Collider2D → 检查物体是否有Collider2D/层级是否匹配");
+        }
+        else
+        {
+            Debug.Log($"射线命中：{hit.collider.gameObject.name}，当前物体名：{this.gameObject.name}");
+        }
 
         if (hit.collider != null && hit.collider.gameObject == this.gameObject)
         {
-            if (galleryManager != null)
+            if (photoManager != null)
             {
-                galleryManager.OpenGallery(muralID);
+                photoManager.OpenGallery(muralID);
             }
         }
     }
 
-   
-   
 
-    
+
+
     private void OnDisable()
     {
-        if (clickAction != null && clickAction.enabled)
+        if (clickAction != null)
         {
             clickAction.performed -= OnClickActionPerformed;
-            clickAction.Disable();
+            
         }
     }
 
     private void OnEnable()
     {
-        if (clickAction != null && !clickAction.enabled)
+        if (clickAction != null)
         {
             clickAction.performed += OnClickActionPerformed;
-            clickAction.Enable();
+            // 只有Action未启用时才启用
+            if (!clickAction.enabled) clickAction.Enable();
         }
     }
 }

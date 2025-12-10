@@ -137,6 +137,7 @@ public class PlayerController : MonoBehaviour
     {
         if (physicsCheck.isGround || (remainingDoubleJumps > 0 && !physicsCheck.isGround))
         {
+            Debug.Log("111111");
             isJumping = true;
             // 启动时间计时器：key=唯一标识，duration=最长长按时间
             // TimerManager.Start方法会自动处理：存在则重启，不存在则创建

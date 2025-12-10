@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class DigitalPasswordManager : MonoBehaviour
 {
-    // 单例模式（跨场景持久化）
+   
     public static DigitalPasswordManager Instance;
 
-    [Header("UI组件引用")]
+    [Header("UI组件")]
     public GameObject passwordCanvas;
-    public Image[] digitSlots;     // 4个数字显示槽（必须赋值4个）
-    public Button[] numberButtons; // 0-9数字按钮（必须赋值10个）
-    public Button backButton;      // Back按钮
-    public Button exitButton;       // 新增：退出密码界面按钮
-    //public Text messageText;       // 提示信息（取消注释需赋值）
+    public Image[] digitSlots;     
+    public Button[] numberButtons; 
+    public Button backButton;      
+    public Button exitButton;       
+    //public Text messageText;      
 
-    [Header("数字图片设置")]
-    public Sprite[] digitSprites;  // 0-9的数字显示图片（必须赋值10个）
-    public Sprite emptySlotSprite; // 空槽位图片（可选，优先用这个）
+    [Header("数字图片")]
+    public Sprite[] digitSprites; 
+    public Sprite emptySlotSprite; 
 
-    [Header("密码门设置")]
+    [Header("门设置")]
     public string correctPassword = "6511";
-    public GameObject door;  // 门的碰撞体（可手动拖入，无需代码查找）
-    public bool autoFindDoor = true; // 是否自动查找门物体（手动拖入则设为false）
+    public GameObject door;  
+    //public bool autoFindDoor = true; 
 
     // 输入记录：存储<位置索引, 数字值>
     private Dictionary<int, int> currentInput = new Dictionary<int, int>();
@@ -402,13 +402,5 @@ IEnumerator ShakeDigits()
     }
 }
 
-   /* // 可选：关门方法（复用）
-    public void CloseDoor()
-    {
-        if (door != null)
-        {
-            door.enabled = true;
-            Debug.Log("门已关闭，碰撞体已启用");
-        }
-    }*/
+  
 }

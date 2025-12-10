@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class TextCon : MonoBehaviour
+using UnityEngine.UI;
+public class YuanShen : MonoBehaviour
 {
     public GameObject player;
-    public string text;
+    public GameObject yuanshen;
 
-    void Start()
+    void Awake()
     {
-        TipUI.Instance.HideTip();
+        
         player = GameObject.FindGameObjectWithTag("Player");
+        yuanshen = GameObject.FindGameObjectWithTag("yuanshen");
+        
         
         if (player == null)
             Debug.LogError("Ã»ÕÒµ½Player");
@@ -23,10 +25,7 @@ public class TextCon : MonoBehaviour
         if (obj.gameObject == player)
         {
 
-            if (TipUI.Instance != null)
-                TipUI.Instance.ShowTip(text);
-            else
-                Debug.LogError("TipUI.InstanceÎª¿Õ");
+            yuanshen.SetActive(true);
         }
     }
 
@@ -34,10 +33,8 @@ public class TextCon : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.gameObject == player && TipUI.Instance != null)
-        {
-            TipUI.Instance.HideTip();
-            this.gameObject.SetActive(false);
-        }
+        yuanshen.SetActive(false);
+        this.gameObject.SetActive(false);
+        
     }
 }
