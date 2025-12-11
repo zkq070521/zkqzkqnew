@@ -145,6 +145,15 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""c4f11c79-8315-499d-8bc0-56f771d7911e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -365,6 +374,17 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c9eeebb-5ac0-4334-9462-9e631440bd1b"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -933,6 +953,137 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PhotoMouse"",
+            ""id"": ""54ad0e12-1cc9-4364-8b5c-30b2a450e5a6"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""746e9f27-bd45-4336-a50f-a8a2bc192312"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""click"",
+                    ""type"": ""Button"",
+                    ""id"": ""1f21e4a8-4a7c-4993-a135-ef043fcd4e56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""11c010ea-8a4b-4392-b426-99bfb7316d29"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""86e3232f-c212-4f11-9e71-38caa824457d"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UFO"",
+            ""id"": ""90e9926d-a615-4c79-9b06-81a4e46240d2"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""a056f490-53e2-4455-a96f-42981b0c7b8b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""265fa62d-681d-478e-a583-60f3012d9154"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""49851226-6b4c-4295-bb16-717f04a779e5"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""13b9954b-a220-4f7b-b86f-a1c53394b81c"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse;Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""3cbde095-561f-4082-93f3-640a32120c6e"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""415330d4-e20d-4347-a1ca-7d833411e8de"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa63e636-bd16-4d42-8989-2ebd4576cf93"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1006,6 +1157,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         m_Gameplay_Fire = m_Gameplay.FindAction("Fire", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_Gameplay_Confirm = m_Gameplay.FindAction("Confirm", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1022,6 +1174,13 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_Newaction = m_Mouse.FindAction("New action", throwIfNotFound: true);
         m_Mouse_click = m_Mouse.FindAction("click", throwIfNotFound: true);
+        // PhotoMouse
+        m_PhotoMouse = asset.FindActionMap("PhotoMouse", throwIfNotFound: true);
+        m_PhotoMouse_Newaction = m_PhotoMouse.FindAction("New action", throwIfNotFound: true);
+        m_PhotoMouse_click = m_PhotoMouse.FindAction("click", throwIfNotFound: true);
+        // UFO
+        m_UFO = asset.FindActionMap("UFO", throwIfNotFound: true);
+        m_UFO_Move = m_UFO.FindAction("Move", throwIfNotFound: true);
     }
 
     ~@PlayerInputControl()
@@ -1029,6 +1188,8 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, PlayerInputControl.Gameplay.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, PlayerInputControl.UI.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Mouse.enabled, "This will cause a leak and performance issues, PlayerInputControl.Mouse.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PhotoMouse.enabled, "This will cause a leak and performance issues, PlayerInputControl.PhotoMouse.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_UFO.enabled, "This will cause a leak and performance issues, PlayerInputControl.UFO.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1110,6 +1271,7 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Fire;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_Dash;
+    private readonly InputAction m_Gameplay_Confirm;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -1145,6 +1307,10 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Dash".
         /// </summary>
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Confirm".
+        /// </summary>
+        public InputAction @Confirm => m_Wrapper.m_Gameplay_Confirm;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1189,6 +1355,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
         }
 
         /// <summary>
@@ -1218,6 +1387,9 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
         }
 
         /// <summary>
@@ -1553,6 +1725,209 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="MouseActions" /> instance referencing this action map.
     /// </summary>
     public MouseActions @Mouse => new MouseActions(this);
+
+    // PhotoMouse
+    private readonly InputActionMap m_PhotoMouse;
+    private List<IPhotoMouseActions> m_PhotoMouseActionsCallbackInterfaces = new List<IPhotoMouseActions>();
+    private readonly InputAction m_PhotoMouse_Newaction;
+    private readonly InputAction m_PhotoMouse_click;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "PhotoMouse".
+    /// </summary>
+    public struct PhotoMouseActions
+    {
+        private @PlayerInputControl m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public PhotoMouseActions(@PlayerInputControl wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "PhotoMouse/Newaction".
+        /// </summary>
+        public InputAction @Newaction => m_Wrapper.m_PhotoMouse_Newaction;
+        /// <summary>
+        /// Provides access to the underlying input action "PhotoMouse/click".
+        /// </summary>
+        public InputAction @click => m_Wrapper.m_PhotoMouse_click;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_PhotoMouse; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="PhotoMouseActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(PhotoMouseActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="PhotoMouseActions" />
+        public void AddCallbacks(IPhotoMouseActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PhotoMouseActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PhotoMouseActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+            @click.started += instance.OnClick;
+            @click.performed += instance.OnClick;
+            @click.canceled += instance.OnClick;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="PhotoMouseActions" />
+        private void UnregisterCallbacks(IPhotoMouseActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+            @click.started -= instance.OnClick;
+            @click.performed -= instance.OnClick;
+            @click.canceled -= instance.OnClick;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PhotoMouseActions.UnregisterCallbacks(IPhotoMouseActions)" />.
+        /// </summary>
+        /// <seealso cref="PhotoMouseActions.UnregisterCallbacks(IPhotoMouseActions)" />
+        public void RemoveCallbacks(IPhotoMouseActions instance)
+        {
+            if (m_Wrapper.m_PhotoMouseActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="PhotoMouseActions.AddCallbacks(IPhotoMouseActions)" />
+        /// <seealso cref="PhotoMouseActions.RemoveCallbacks(IPhotoMouseActions)" />
+        /// <seealso cref="PhotoMouseActions.UnregisterCallbacks(IPhotoMouseActions)" />
+        public void SetCallbacks(IPhotoMouseActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PhotoMouseActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PhotoMouseActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="PhotoMouseActions" /> instance referencing this action map.
+    /// </summary>
+    public PhotoMouseActions @PhotoMouse => new PhotoMouseActions(this);
+
+    // UFO
+    private readonly InputActionMap m_UFO;
+    private List<IUFOActions> m_UFOActionsCallbackInterfaces = new List<IUFOActions>();
+    private readonly InputAction m_UFO_Move;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "UFO".
+    /// </summary>
+    public struct UFOActions
+    {
+        private @PlayerInputControl m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public UFOActions(@PlayerInputControl wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "UFO/Move".
+        /// </summary>
+        public InputAction @Move => m_Wrapper.m_UFO_Move;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_UFO; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="UFOActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(UFOActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="UFOActions" />
+        public void AddCallbacks(IUFOActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UFOActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UFOActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="UFOActions" />
+        private void UnregisterCallbacks(IUFOActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UFOActions.UnregisterCallbacks(IUFOActions)" />.
+        /// </summary>
+        /// <seealso cref="UFOActions.UnregisterCallbacks(IUFOActions)" />
+        public void RemoveCallbacks(IUFOActions instance)
+        {
+            if (m_Wrapper.m_UFOActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="UFOActions.AddCallbacks(IUFOActions)" />
+        /// <seealso cref="UFOActions.RemoveCallbacks(IUFOActions)" />
+        /// <seealso cref="UFOActions.UnregisterCallbacks(IUFOActions)" />
+        public void SetCallbacks(IUFOActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UFOActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UFOActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="UFOActions" /> instance referencing this action map.
+    /// </summary>
+    public UFOActions @UFO => new UFOActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1667,6 +2042,13 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Confirm" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnConfirm(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1767,5 +2149,42 @@ public partial class @PlayerInputControl: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClick(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PhotoMouse" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="PhotoMouseActions.AddCallbacks(IPhotoMouseActions)" />
+    /// <seealso cref="PhotoMouseActions.RemoveCallbacks(IPhotoMouseActions)" />
+    public interface IPhotoMouseActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNewaction(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "click" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnClick(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UFO" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="UFOActions.AddCallbacks(IUFOActions)" />
+    /// <seealso cref="UFOActions.RemoveCallbacks(IUFOActions)" />
+    public interface IUFOActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMove(InputAction.CallbackContext context);
     }
 }

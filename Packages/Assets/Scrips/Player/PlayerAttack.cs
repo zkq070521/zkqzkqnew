@@ -10,7 +10,8 @@ public class PlayerAttack : MonoBehaviour
     public Rigidbody2D rb;
     //public Vector2 direction;
     //敌人碰撞器
-    
+   // public GameObject littleObject;
+   // public GameObject monkeyObject;
     public Collider2D monkeyCollider;
     public Collider2D littleCollider;
     // Eye 向前移动的速度
@@ -30,13 +31,13 @@ public class PlayerAttack : MonoBehaviour
     {
         //Input
         //InputManger.Instance?.SwitchToMouse();
-        GameObject enemyObject = GameObject.FindGameObjectWithTag("Enemy");
+        GameObject monkeyObject = GameObject.FindGameObjectWithTag("Enemy");
         rb = GameObject.FindGameObjectWithTag("Eye").GetComponent<Rigidbody2D>();
-        monkeyCollider = enemyObject.GetComponent<Collider2D>();
+        monkeyCollider = monkeyObject.GetComponent<Collider2D>();
 
-        GameObject littleObject = GameObject.FindGameObjectWithTag("Enemy");
-        rb = GameObject.FindGameObjectWithTag("Eye").GetComponent<Rigidbody2D>();
-        littleCollider = littleObject.GetComponent<Collider2D>();
+        //GameObject littleObject = GameObject.FindGameObjectWithTag("Enemy");
+       // rb = GameObject.FindGameObjectWithTag("Eye").GetComponent<Rigidbody2D>();
+        //littleCollider = littleObject.GetComponent<Collider2D>();
 
         // 初始时隐藏 Eye
         eye.SetActive(false);
@@ -96,9 +97,9 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerStay2D(Collider2D eyeCollider)
     {
         monkeyCollider.GetComponent<EnemyHealth>()?.TakeDamage(20);
-        Debug.Log("应该打中了呀");
-        littleCollider.GetComponent<LittleEnemyHealth>()?.TakeDamage(20);
-
+        
+        //littleCollider.GetComponent<LittleEnemyHealth>()?.TakeDamage(20);
+        //Debug.Log("打中小敌人");
     }
     
 

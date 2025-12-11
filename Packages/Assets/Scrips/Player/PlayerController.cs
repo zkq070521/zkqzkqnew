@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHoldTime; // 记录按键按下的累计时间
     private bool isJumping;     // 标记是否正在跳跃中（避免空中重复累积时间
 
+    private int remainingDoubleJumps = 1;
+
 
     [Header("走路设置")]
     public float speed;
@@ -103,6 +105,11 @@ public class PlayerController : MonoBehaviour
 
         inputDirection = inputControl.Gameplay.Move.ReadValue<Vector2>();
 
+        // 落地时重置二段跳次数
+        if (physicsCheck.isGround && !isJumping)
+        {
+            remainingDoubleJumps = 1; // 落地后恢复1次二段跳机会
+        }
 
         // 如果长按超过最大时间没松开，自动用最大力跳跃
         if (isJumping && _timerManager.IsFinished(jumpHoldTimerKey))
@@ -128,8 +135,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void OnJumpStarted(InputAction.CallbackContext obj)
     {
-        if (physicsCheck.isGround)
+        if (physicsCheck.isGround || (remainingDoubleJumps > 0 && !physicsCheck.isGround))
         {
+            Debug.Log("111111");
             isJumping = true;
             // 启动时间计时器：key=唯一标识，duration=最长长按时间
             // TimerManager.Start方法会自动处理：存在则重启，不存在则创建
@@ -167,6 +175,13 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         // 施加跳跃力
         rb.AddForce(transform.up * force, ForceMode2D.Impulse);
+
+        if (!physicsCheck.isGround)
+        {
+            remainingDoubleJumps--;
+            Debug.Log($"触发二段跳！剩余次数：{remainingDoubleJumps}");
+        }
+
     }
 
     /// <summary>

@@ -8107,7 +8107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &919175958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8122,6 +8122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStatBar: {fileID: 967664717}
   healthEvent: {fileID: 11400000, guid: 7a80cd622bd620c4d927207792c34bc0, type: 2}
+  playerController: {fileID: 0}
 --- !u!4 &919175959
 Transform:
   m_ObjectHideFlags: 0
@@ -8253,6 +8254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 1678989978}
+  powerImage: {fileID: 0}
+  gainImage: {fileID: 0}
 --- !u!1 &994140961
 GameObject:
   m_ObjectHideFlags: 0
@@ -8666,6 +8669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthImage: {fileID: 1678989978}
+  powerImage: {fileID: 0}
+  gainImage: {fileID: 0}
 --- !u!1 &1171511881
 GameObject:
   m_ObjectHideFlags: 0
@@ -30393,15 +30398,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72ddbcb40b361a4da4d6e1eb0616c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 0
+  maxJumpForce: 0
+  jumpHoldTimeMax: 0
+  jumpHoldTime: 0
+  speed: 500
+  rb: {fileID: 1964915630}
+  physicsCheck: {fileID: 0}
+  inputDirection: {x: 0, y: 0}
+  maxPower: 120
+  currentPower: 0
+  dashCost: 40
+  dashSpeed: 0
+  dashDuration: 0
+  powerRecoveryRate: 10
+  OnPowerChange:
+    m_PersistentCalls:
+      m_Calls: []
   guns:
   - {fileID: 732734332}
   - {fileID: 999364507}
   - {fileID: 1368333801}
   - {fileID: 1488358423}
   - {fileID: 1688458007}
-  rb: {fileID: 1964915630}
-  inputDirection: {x: 0, y: 0}
-  speed: 500
 --- !u!70 &1964915632
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -30493,7 +30512,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1295202245
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1bfa6957f80f3fe439d1c3942bc8d0f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

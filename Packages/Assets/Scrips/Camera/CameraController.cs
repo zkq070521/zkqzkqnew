@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [Range(0, 1)] public float smoothSpeed = 0.125f; // 相机跟随平滑度
 
     [Header("视差背景")]
-    public Transform farBackground;
+    //public Transform farBackground;
     public Transform middleBackground;
     public Transform nearBackground;
     public Transform treeBackground;
@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
     {
         
             target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        //middleBackground = GameObject.FindGameObjectWithTag("middle").transform;
         // 记录相机初始位置
         lastCameraPos = transform.position;
 
@@ -57,26 +57,26 @@ public class CameraController : MonoBehaviour
         Vector3 cameraDelta = transform.position - lastCameraPos;
 
         
-        if (farBackground != null)
-            farBackground.position += new Vector3(cameraDelta.x * farParallax, cameraDelta.y * farParallax, 0);
+        //if (farBackground != null)
+           // farBackground.position += new Vector3(cameraDelta.x * farParallax, cameraDelta.y * farParallax, 0);
         if (middleBackground != null)
-            middleBackground.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y * middleParallax, 0);
+            middleBackground.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y , 0);
         if (nearBackground != null)
-            nearBackground.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y * nearParallax, 0);
+            nearBackground.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y, 0);
         if (treeBackground != null)
-            treeBackground.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y * treeParallax, 0);
+            treeBackground.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y , 0);
         if (middleBackground != null)
-            middleBackground1.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y * middleParallax, 0);
+            middleBackground1.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y, 0);
         if (nearBackground != null)
-            nearBackground1.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y * nearParallax, 0);
+            nearBackground1.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y , 0);
         if (treeBackground != null)
-            treeBackground1.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y * treeParallax, 0);
+            treeBackground1.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y, 0);
         if (middleBackground != null)
-            middleBackground2.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y * middleParallax, 0);
+            middleBackground2.position += new Vector3(cameraDelta.x * middleParallax, cameraDelta.y , 0);
         if (nearBackground != null)
-            nearBackground2.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y * nearParallax, 0);
+            nearBackground2.position += new Vector3(cameraDelta.x * nearParallax, cameraDelta.y , 0);
         if (treeBackground != null)
-            treeBackground2.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y * treeParallax, 0);
+            treeBackground2.position += new Vector3(cameraDelta.x * treeParallax, cameraDelta.y, 0);
 
         // 5. 更新上一帧相机位置
         lastCameraPos = transform.position;

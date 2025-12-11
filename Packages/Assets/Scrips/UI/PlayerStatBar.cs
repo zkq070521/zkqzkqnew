@@ -18,6 +18,10 @@ public class PlayerStatBar : MonoBehaviour
         healthImage.fillAmount = persentage;
     }
 
+    /// <summary>
+    /// 接收PlayerController的变更百分比
+    /// </summary>
+    /// <param name="persentage">百分比：current/max</param>
     public void OnPowerChange(float persentage)
     {
         powerImage.fillAmount = persentage;

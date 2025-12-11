@@ -11,7 +11,7 @@ public class PhysicsCheck : MonoBehaviour
     public LayerMask groundLayer;
     void Update()
     {
-        Check(); ;
+        Check(); 
     }
 
     private void Check()

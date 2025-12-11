@@ -37,12 +37,12 @@ public class Map : MonoBehaviour
     private void Update()
     {
         // 核心逻辑：当Player超出当前地图块的「右边界」时，地图向右平移
-        if (player.position.x > transform.position.x + mapWidth * 2 + cameraController.playerOffset.x)
+        if (player.position.x > transform.position.x + mapWidth * 2 - cameraController.playerOffset.x)
         {
             transform.position += new Vector3(mapWidth * 3, 0, 0);
         }
         // 当Player超出当前地图块的「左边界」时，地图向左平移
-        else if (player.position.x < transform.position.x - mapWidth * 2 + cameraController.playerOffset.x)
+        else if (player.position.x < transform.position.x - mapWidth * 2 - cameraController.playerOffset.x)
         {
             transform.position -= new Vector3(mapWidth * 3, 0, 0);
         }
