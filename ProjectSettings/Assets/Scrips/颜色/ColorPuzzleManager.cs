@@ -17,14 +17,11 @@ public class ColorPuzzleManager : MonoBehaviour
     public GameObject skull;
     public string text;
 
+   
     private void Start()
     {
         TipUI.Instance.HideTip();
-    }
-    private void Awake()
-    {
-       
-            clickAction = inputActionAsset.FindActionMap("Mouse").FindAction("Click");
+        clickAction = inputActionAsset.FindActionMap("Mouse").FindAction("Click");
       
     }
 

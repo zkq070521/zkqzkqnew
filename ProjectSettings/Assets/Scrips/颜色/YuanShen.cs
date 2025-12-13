@@ -12,11 +12,25 @@ public class YuanShen : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         yuanshen = GameObject.FindGameObjectWithTag("yuanshen");
-        
-        
+        yuanshen.SetActive(false);
+
         if (player == null)
             Debug.LogError("没找到Player");
-    }
+
+        // 假设Player挂载了PlayerMovement脚本
+
+            PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                player = playerHealth.gameObject;
+            }
+            else
+            {
+                Debug.LogError("没找到挂载PlayerMovement的对象！");
+            }
+        }
+    
+
 
     private void OnTriggerStay2D(Collider2D obj)
     {

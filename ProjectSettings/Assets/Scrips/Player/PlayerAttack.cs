@@ -97,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
     private void OnTriggerStay2D(Collider2D eyeCollider)
     {
         monkeyCollider.GetComponent<EnemyHealth>()?.TakeDamage(20);
-        Debug.Log("应该打中了呀");
+        
         //littleCollider.GetComponent<LittleEnemyHealth>()?.TakeDamage(20);
         //Debug.Log("打中小敌人");
     }

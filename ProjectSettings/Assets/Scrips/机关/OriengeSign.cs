@@ -5,7 +5,7 @@ using UnityEngine;
 public class OriengeSign : MonoBehaviour
 {
     public GameObject oriange;//éÙ×Ó
-    public GameObject baoxian;//Åö×²Ìå
+    
     public GameObject player;
     public GameObject dun;//¶ÜÅÆ
     public Transform startTrans;
@@ -13,11 +13,11 @@ public class OriengeSign : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         oriange.SetActive(false);
-        baoxian.SetActive(true);
+        
         a = true;
         dun.SetActive(a);
         startTrans = player.transform;
@@ -34,7 +34,7 @@ public class OriengeSign : MonoBehaviour
         {
             oriange.SetActive(true);
             other.gameObject.SetActive(false);
-            baoxian.SetActive(false);
+            
         }
 
         if (other.CompareTag("Player"))

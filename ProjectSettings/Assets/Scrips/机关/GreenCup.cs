@@ -10,7 +10,7 @@ public class GreenCup : MonoBehaviour
     //public GameObject baoxian;
 
 
-    private void Start()
+    private void Awakr()
     {
         oriange.SetActive(false);
         fruit.SetActive(false);
