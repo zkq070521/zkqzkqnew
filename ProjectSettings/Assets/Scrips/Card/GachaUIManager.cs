@@ -167,7 +167,7 @@ void OpenGachaPanel()
         tenCardPanel.SetActive(true);
 
       
-        foreach (Image img in tenCardImages)
+        foreach (Image img in tenCardImages)//±éÀúÊı×é
         {
             if (img != null) img.gameObject.SetActive(false);
         }

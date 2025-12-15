@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System.Collections;
 
 public class ColorPuzzleManager : MonoBehaviour
 {
     [Header("核心配置")]
+    public LayerMask targetLayer;
     public ColorType[] correctColorOrder; // 正确的颜色顺序
     //public bool sortByXAxis = true;
     private ColorObject firstSelected; // 第一个选中的物体的ColorObject脚本
@@ -17,20 +18,36 @@ public class ColorPuzzleManager : MonoBehaviour
     public GameObject skull;
     public string text;
 
-   
-    private void Start()
+
+    private void Awake()
     {
-        TipUI.Instance.HideTip();
-        clickAction = inputActionAsset.FindActionMap("Mouse").FindAction("Click");
-      
+        
+        if (inputActionAsset == null)
+        {
+            
+            return;
+        }
+
+        
+        clickAction = inputActionAsset.FindActionMap("Mouse")?.FindAction("Click");
+        if (clickAction == null)
+        {
+           
+            return;
+        }
+        
     }
 
+    private void Start()
+    {
+        TipUI.Instance?.HideTip();
+    }
     private void OnEnable()
     {
         
         if (clickAction != null)
         {
-            //clickAction.Enable();
+            clickAction.Enable();
             clickAction.performed += OnMouseClickPerformed;
         }
     }
@@ -41,7 +58,7 @@ public class ColorPuzzleManager : MonoBehaviour
         if (clickAction != null)
         {
             clickAction.performed -= OnMouseClickPerformed;
-            //clickAction.Disable();
+            clickAction.Disable();
         }
     }
 
@@ -97,9 +114,9 @@ public class ColorPuzzleManager : MonoBehaviour
         
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        //RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, targetLayer);
 
-        
         if (hit.collider != null)
         {
             return hit.collider.GetComponent<ColorObject>();
@@ -188,13 +205,24 @@ public class ColorPuzzleManager : MonoBehaviour
         }
     }
 
-    
+
     private void OnPuzzleSuccess()
     {
-       skull.SetActive(false);
+        skull.SetActive(false);
         TipUI.Instance.ShowTip(text);
-
+     
+        StartCoroutine(HideTipAfter3Seconds());
     }
 
     
+    private IEnumerator HideTipAfter3Seconds()
+    {
+        yield return new WaitForSeconds(3f); // 计时3秒
+        if (TipUI.Instance != null) // 判空避免报错
+        {
+            TipUI.Instance.HideTip();
+        }
+    }
+
+
 }

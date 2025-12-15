@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 
 public class PhotoInput : MonoBehaviour
 {
+    public LayerMask targetLayer;
     public int muralID = 0;
     private PhotoManger photoManager;
     private Camera mainCamera;
@@ -61,8 +62,10 @@ public class PhotoInput : MonoBehaviour
 
         Vector2 screenPos = Mouse.current.position.ReadValue();
         Ray ray = mainCamera.ScreenPointToRay(screenPos);
+
         // 新增：扩大射线检测距离（默认100，改成1000，避免距离不够）
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 1000f);
+        //RaycastHit2D hit = Physics2D.GetRayIntersection(ray, 1000f);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity, targetLayer);
 
         if (hit.collider == null)
         {
@@ -90,7 +93,9 @@ public class PhotoInput : MonoBehaviour
         if (clickAction != null)
         {
             clickAction.performed -= OnClickActionPerformed;
-            
+            clickAction.Disable();
+
+
         }
     }
 

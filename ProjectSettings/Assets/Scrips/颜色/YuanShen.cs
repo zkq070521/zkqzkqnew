@@ -7,12 +7,12 @@ public class YuanShen : MonoBehaviour
     public GameObject player;
     public GameObject yuanshen;
 
-    void Awake()
+    void Update()
     {
         
         player = GameObject.FindGameObjectWithTag("Player");
-        yuanshen = GameObject.FindGameObjectWithTag("yuanshen");
-        yuanshen.SetActive(false);
+       // yuanshen = GameObject.FindGameObjectWithTag("yuanshen");
+        
 
         if (player == null)
             Debug.LogError("√ª’“µΩPlayer");
