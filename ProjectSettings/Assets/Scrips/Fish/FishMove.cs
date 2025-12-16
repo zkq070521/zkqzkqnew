@@ -1,24 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class UFO_Move : MonoBehaviour
+public class FishMove : MonoBehaviour
 {
     [Header("移动配置")]
     public float moveSpeed;
-    public float leftBound; // 左边界（x坐标最小值）
-    public float rightBound; // 右边界（x坐标最大值）
-
+    public float left; // 左边界（x坐标最小值）
+    public float right; // 右边界（x坐标最大值）
+    private Vector2 startPosition;
     private int moveDirection; // 移动方向（1=向右，-1=向左）
-    private bool isHit = false; // 新增：是否被射线击中
+    private bool isHit = false; 
 
     private void Start()
     {
-        Vector2 startPosition = transform.position;
+       startPosition = transform.position;
         moveDirection = 1;
     }
 
     private void Update()
     {
-        
+
         if (isHit) return;
 
         MoveUFO();
@@ -26,14 +28,14 @@ public class UFO_Move : MonoBehaviour
         FlipUFOByDirection();
     }
 
-    
+
     public void OnHitByRay()
     {
         isHit = true; // 停止移动
-        
-        Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
-        rb.gravityScale = 4f; 
-        rb.bodyType = RigidbodyType2D.Dynamic; 
+
+         Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+        rb.gravityScale = 4f;
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void MoveUFO()
@@ -45,11 +47,11 @@ public class UFO_Move : MonoBehaviour
 
     private void CheckBoundaries()
     {
-        if (transform.position.x >= rightBound)
+        if (transform.position.x >= right + startPosition.x)
         {
             moveDirection = -1;
         }
-        else if (transform.position.x <= leftBound)
+        else if (transform.position.x <= startPosition.x - left)
         {
             moveDirection = 1;
         }

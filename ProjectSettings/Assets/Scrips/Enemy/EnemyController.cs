@@ -4,69 +4,69 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // 激光发射点 
+    
     public Transform laserOrigin;
 
-    // 射击间隔
+   
     public float shootInterval = 1f;
     private float lastShotTime;
 
-    // 激光可视效果
+    
     public LineRenderer laserLine;
 
-    // 主角引用
+ 
     private GameObject player;
     private PlayerHealth playerHealth;
 
     public LayerMask layermask;
 
-    // 新增：最大射击距离（可在Inspector面板调整，默认5米）
+   
     public float maxShootDistance = 5f;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); // "Player"标签
-        if (player != null) // 新增：判空，避免Player不存在时报错
+        player = GameObject.FindGameObjectWithTag("Player"); 
+        if (player != null) 
         {
             playerHealth = player.GetComponent<PlayerHealth>();
         }
-        laserLine.enabled = false; // 初始隐藏激光
+        laserLine.enabled = false; 
     }
 
     void Update()
     {
-        // 检查是否到了可以射击的时间（原有逻辑保留，无需改）
+        
     }
 
     private void FixedUpdate()
     {
-        // 新增：先判断Player是否存在（避免空引用）
+       
         if (player == null) return;
 
-        // 新增：计算敌人到Player的实际距离
+      
         float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (Time.time - lastShotTime >= shootInterval)
         {
-            // 修改：射击条件 = 距离在最大范围內 + 能看到Player
+          
             if (distanceToPlayer <= maxShootDistance && CanSeePlayer())
             {
-                // 发射激光 (显示效果)
+               
                 laserLine.enabled = true;
                 laserLine.SetPosition(0, laserOrigin.position); // 起点：敌人激光点
                 laserLine.SetPosition(1, player.transform.position); // 终点：主角位置
 
-                playerHealth?.TakeDamage(5); // 新增：?. 判空，避免PlayerHealth不存在时报错
+                playerHealth?.TakeDamage(5); 
 
-                // 更新上次射击时间
+            
                 lastShotTime = Time.time;
             }
             else
             {
-                // 看不到主角 或 距离太远，隐藏激光
+              
                 laserLine.enabled = false;
 
-                //重置血量（注释保留，按需开启）
+                //重置血量
                 //playerHealth.ResetHealth();
             }
         }
@@ -104,7 +104,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // 新增：Scene视图可视化最大射击距离（方便调试，可选）
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red; // 颜色：红色

@@ -998,6 +998,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Player",
+            "id": "311d1d06-4e7a-4653-af95-eb4bcd653113",
+            "actions": [
+                {
+                    "name": "TabSkill",
+                    "type": "Button",
+                    "id": "61a2afb4-b686-48cd-8f25-3a2cd4fc58b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c8a08d56-e96d-410c-b7f9-e5179c74ce6e",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TabSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

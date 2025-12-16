@@ -129,28 +129,7 @@ void OpenGachaPanel()
     }
 
    
-    /*void ShowTenCardsLayout(List<CardData> tenCards)
-    {
-        
-        tenCardPanel.SetActive(true);
-
-
-        for (int i = 0; i < 10; i++)
-        {
-
-
-            CardData card = tenCards[i];
-            Image cardImage = tenCardImages[i];
-
-            // ÏÔÊ¾Image²¢¸³Öµ¿¨ÅÆÍ¼Æ¬
-            cardImage.gameObject.SetActive(true);
-            cardImage.sprite = card.cardSprite;
-
-            yield return new WaitForSeconds(0.5f);
-        }
-        btnSingleGacha.interactable = true;
-        btnTenGacha.interactable = true;
-    }*/
+ 
 
   
     void ShowCard(CardData card)
@@ -184,7 +163,7 @@ void OpenGachaPanel()
            
             cardImage.gameObject.SetActive(true);
             cardImage.sprite = card.cardSprite;
-            yield return new WaitForSeconds(0.5f); // µÈ´ý0.5Ãë
+            yield return new WaitForSeconds(0.05f); 
         }
 
       

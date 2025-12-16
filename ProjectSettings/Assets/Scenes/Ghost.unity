@@ -48392,9 +48392,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: '#eyemove'
       objectReference: {fileID: 0}
+    - target: {fileID: 5292204626167905078, guid: ac4b2e8804f7e864cb25602cd1d068c4, type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     - target: {fileID: 7839531829967712288, guid: ac4b2e8804f7e864cb25602cd1d068c4, type: 3}
       propertyPath: leftBound
       value: -62.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839531829967712288, guid: ac4b2e8804f7e864cb25602cd1d068c4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839531829967712288, guid: ac4b2e8804f7e864cb25602cd1d068c4, type: 3}
       propertyPath: rightBound
