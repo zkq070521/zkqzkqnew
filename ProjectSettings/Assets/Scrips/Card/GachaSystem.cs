@@ -8,8 +8,8 @@ public class GachaSystem : MonoBehaviour
     // 抽卡概率
     public int rProb = 80;           
     public int srProb = 18;          
-    public int ssrProb = 2;       
-
+    public int ssrProb = 2;
+    
     // 单抽方法
     public CardData SingleGacha()
     {

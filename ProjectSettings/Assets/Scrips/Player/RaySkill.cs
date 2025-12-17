@@ -79,7 +79,7 @@ public class RaySkill : MonoBehaviour
         isFading = false;
         lineRenderer.enabled = true;
         lineRenderer.useWorldSpace = true;
-        lineRenderer.sortingLayerName = "UI"; // 最上层渲染
+        //lineRenderer.sortingLayerName = "UI"; // 最上层渲染
         lineRenderer.sortingOrder = 999;
         currentRotateAngle = 0f; // 重置旋转角度
         rotateDirection = 1;
@@ -181,7 +181,7 @@ public class RaySkill : MonoBehaviour
 
         Vector3 rayStart = lineRenderer.GetPosition(0);
         Vector3 rayEnd = lineRenderer.GetPosition(1);
-        Vector3 dir = (rayEnd - rayStart).normalized;
+        Vector3 dir = (rayStart - rayEnd).normalized;
         float currentLength = Vector3.Distance(rayStart, rayEnd);
         float newLength = currentLength - fadeSpeed * Time.deltaTime;
 

@@ -8,14 +8,18 @@ public class GachaUIManager : MonoBehaviour
 {
     
     public GameObject gachaPanel;
+    public GameObject player;
+    public RaySkill raySkill;
     public Button btnOpenGacha;
     public Button btnCloseGacha;
     public Button btnSingleGacha;
     public Button btnTenGacha;
     public Image cardDisplayImage;      // µ¥³é
     //public Text tipText;
-
-    
+    public bool isFirst;
+    public Sprite first;
+    public Button firstRead;
+    public GameObject shuoming;
     public Image[] tenCardImages;       // Ê®Á¬³é
     public GameObject tenCardPanel;     
 
@@ -23,16 +27,20 @@ public class GachaUIManager : MonoBehaviour
     void Start()
     {
 
-    
+        isFirst = true;
+        firstRead.interactable = false;
         gachaSystem = gachaPanel.GetComponent<GachaSystem>();
+        shuoming.SetActive(false);
+        raySkill = player.GetComponent<RaySkill>();
+        raySkill.enabled = false;
 
-        
         btnOpenGacha.onClick.AddListener(OpenGachaPanel);
         btnCloseGacha.onClick.AddListener(CloseGachaPanel);
         btnSingleGacha.onClick.AddListener(OnSingleGachaClick);
         btnTenGacha.onClick.AddListener(OnTenGachaClick);
+        firstRead.onClick.AddListener(OnFirstClick);
 
-       
+
         cardDisplayImage.gameObject.SetActive(false);
         //tipText.text = "";
        
@@ -41,9 +49,36 @@ public class GachaUIManager : MonoBehaviour
        
     }
 
+    private void Update()
+    {
+        if(CoinManager.Instance.currentCoin < 1)
+        {
+            btnSingleGacha.interactable = false;
+        }
+        else 
+        {
+            btnSingleGacha.interactable = true;
+        }
+
+        if (CoinManager.Instance.currentCoin < 10)
+        {
+            btnTenGacha.interactable = false;
+        }
+        else
+        {
+            btnTenGacha.interactable = true;
+        }
+    }
 
 
-void OpenGachaPanel()
+
+    public void OnFirstClick()
+    {
+
+        shuoming.SetActive(true);
+        firstRead.interactable = false;
+    }
+    void OpenGachaPanel()
     {
         gachaPanel.SetActive(true); 
     }
@@ -81,28 +116,41 @@ void OpenGachaPanel()
     }
     void OnSingleGachaClick()
     {
-        
+        CoinManager.Instance.currentCoin -= 1;
+        CoinManager.Instance.UpdateCoinText();
         tenCardPanel.SetActive(false);
-
-        
-        CardData drawCard = gachaSystem.SingleGacha();
-        if (drawCard == null)
+        if (isFirst)
         {
-          
-            cardDisplayImage.gameObject.SetActive(false);
-            return;
+            cardDisplayImage.gameObject.SetActive(true);
+            cardDisplayImage.sprite = first;
+            raySkill.enabled = true;
+            isFirst = false;
+            firstRead.interactable = true;
+        }
+        else 
+        {
+            CardData drawCard = gachaSystem.SingleGacha();
+            if (drawCard == null)
+            {
+
+                cardDisplayImage.gameObject.SetActive(false);
+                return;
+            }
+
+
+            cardDisplayImage.gameObject.SetActive(true);
+            cardDisplayImage.sprite = drawCard.cardSprite;
         }
 
-       
-        cardDisplayImage.gameObject.SetActive(true);
-        cardDisplayImage.sprite = drawCard.cardSprite;
+        
         
     }
 
    
     void OnTenGachaClick()
     {
-       
+        CoinManager.Instance.currentCoin -= 10;
+        CoinManager.Instance.UpdateCoinText();
         cardDisplayImage.gameObject.SetActive(false);
 
        
@@ -126,6 +174,8 @@ void OpenGachaPanel()
        
 
         StartCoroutine(ShowTenCards(tenCards));
+
+        
     }
 
    
