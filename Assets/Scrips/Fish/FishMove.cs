@@ -37,13 +37,13 @@ public class FishMove : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // 2. 获取玩家身上的PlayerHealth组件（非静态调用，更灵活）
+           
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
-            // 3. 空引用检查：避免没有PlayerHealth组件时报错
+            
             if (playerHealth != null)
             {
-                // 4. 调用受伤方法（实例方法，支持多玩家）
+                
                 playerHealth.TakeDamage(50);
                 Debug.Log($"玩家受到 {50} 点伤害，当前血量：{playerHealth.currentHealth}");
             }
