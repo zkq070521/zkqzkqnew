@@ -7,6 +7,22 @@ TagManager:
   - Enemy
   - Wall
   - cloud
+  - Eye
+  - Interactable
+  - runbox
+  - green
+  - dun
+  - SceneTrigger
+  - bubble
+  - fruit
+  - Door
+  - die
+  - Opendoor
+  - Skull
+  - yuanshen
+  - fish
+  - ground
+  - mark
   layers:
   - Default
   - TransparentFX
@@ -19,12 +35,12 @@ TagManager:
   - Enemy
   - Wall
   - Laser
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - box
+  - photo
+  - color
+  - fish
+  - fish2
   - 
   - 
   - 
@@ -62,9 +78,33 @@ TagManager:
   - name: tree
     uniqueID: 24664205
     locked: 0
+  - name: domain
+    uniqueID: 218908055
+    locked: 0
   - name: Enemy
     uniqueID: 2765993051
     locked: 0
+  - name: LittleEnemy
+    uniqueID: 2654049121
+    locked: 0
+  - name: "\u6811"
+    uniqueID: 244197661
+    locked: 0
   - name: Player
     uniqueID: 2999765051
+    locked: 0
+  - name: "\u9886\u57DF"
+    uniqueID: 3714756909
+    locked: 0
+  - name: box
+    uniqueID: 3824923897
+    locked: 0
+  - name: UI
+    uniqueID: 2974696367
+    locked: 0
+  - name: monkey
+    uniqueID: 1890348903
+    locked: 0
+  - name: New Layer 16
+    uniqueID: 364468429
     locked: 0

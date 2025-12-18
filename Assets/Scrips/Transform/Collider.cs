@@ -11,6 +11,7 @@ public class Collider : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(nextScene);
+            DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Player"));
 
         }
     }
