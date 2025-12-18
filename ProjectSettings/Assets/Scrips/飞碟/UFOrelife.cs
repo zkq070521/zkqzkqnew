@@ -27,7 +27,7 @@ public class UFOrelife : MonoBehaviour
     }
 
    
-    void Awake()
+    void UpDate()
     {
         mainCamera = Camera.main;
         simpleCamera = mainCamera.GetComponent<CameraController>();

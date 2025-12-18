@@ -10,7 +10,7 @@ public class UFOdisrelife : MonoBehaviour
     //public float cameraYOffset;
     public Camera mainCamera;
     public GameObject player;
-    public UFOrelife relife;
+    //public UFOcamera relife;
     public CameraController simpleCamera;
     //[Range(0, 1)] public float smoothSpeed = 0.125f; // Æ½»¬¸úËæËÙ¶È
 
@@ -21,8 +21,9 @@ public class UFOdisrelife : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             simpleCamera.enabled = true;
+            //relife.enabled = false;
             playerHealth.startPosition = player.transform.position;
-            relife.enabled = false;
+            
         }
 
 
